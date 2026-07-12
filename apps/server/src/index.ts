@@ -10,7 +10,8 @@ const isDev = process.env["NODE_ENV"] !== "production";
 const app = new Elysia()
   .use(
     cors({
-      origin: (origin) => {
+      origin: (request) => {
+        const origin = request.headers.get("Origin");
         if (!origin) return true; // server-to-server
         const extra = (process.env["ALLOWED_ORIGINS"] ?? "")
           .split(",")
