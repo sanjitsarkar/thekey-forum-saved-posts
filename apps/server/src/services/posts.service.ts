@@ -154,8 +154,23 @@ export async function listPosts(
 
   const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
+  // When listing saved posts, order by when the user saved each post (most-recently-saved first).
+  // Otherwise order by post creation date (newest post first).
+  const userSavedAt = opts.savedByUserId
+    ? sql<Date>`(
+        SELECT ${saves.savedAt} FROM ${saves}
+        WHERE ${saves.postId} = ${posts.id}
+          AND ${saves.userId} = ${opts.savedByUserId}
+          AND ${saves.unsavedAt} IS NULL
+        LIMIT 1
+      )`
+    : null;
+
   const rows = await db
-    .select(postSelectFields(requestingUserId))
+    .select({
+      ...postSelectFields(requestingUserId),
+      ...(userSavedAt ? { userSavedAt } : {}),
+    })
     .from(posts)
     .innerJoin(courses, eq(posts.courseId, courses.id))
     .innerJoin(users, eq(posts.authorId, users.id))
@@ -163,7 +178,7 @@ export async function listPosts(
     .leftJoin(likes, eq(posts.id, likes.postId))
     .where(whereClause)
     .groupBy(posts.id, courses.title, users.name)
-    .orderBy(desc(posts.createdAt))
+    .orderBy(userSavedAt ? desc(userSavedAt) : desc(posts.createdAt))
     .limit(limit)
     .offset(offset);
 
