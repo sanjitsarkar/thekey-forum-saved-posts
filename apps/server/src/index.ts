@@ -10,7 +10,19 @@ const isDev = process.env["NODE_ENV"] !== "production";
 const app = new Elysia()
   .use(
     cors({
-      origin: ["http://localhost:3000", "http://localhost:3001"],
+      origin: (origin) => {
+        // Allow local dev and any Vercel deployment of this project
+        const allowed = [
+          "http://localhost:3000",
+          "http://localhost:3001",
+          "https://forum-one-sage.vercel.app",
+        ];
+        if (!origin) return true; // server-to-server
+        if (allowed.includes(origin)) return true;
+        // Allow any *.vercel.app preview URL for this project
+        if (origin.endsWith(".vercel.app")) return true;
+        return false;
+      },
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       credentials: true,
     })
