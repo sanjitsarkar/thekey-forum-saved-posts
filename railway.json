@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schema.railway.app/railway.schema.json",
+  "deploy": {
+    "startCommand": "bun run apps/server/src/db/migrate.ts && bun run apps/server/src/index.ts",
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 30
+  },
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "apps/server/Dockerfile"
+  }
+}
