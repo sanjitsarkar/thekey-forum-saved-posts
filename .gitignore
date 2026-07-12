@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.bun/
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Drizzle build info
+*.tsbuildinfo
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Keep .env.test (no secrets, uses localhost test DB)
+!apps/server/.env.test
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

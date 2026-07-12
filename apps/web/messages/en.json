@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "forum": "Forum",
+    "savedPosts": "Saved Posts",
+    "allCourses": "All Courses"
+  },
+  "post": {
+    "by": "by",
+    "in": "in",
+    "saves": "{count, plural, =0 {No saves} one {# save} other {# saves}}",
+    "likes": "{count, plural, =0 {No likes} one {# like} other {# likes}}",
+    "save": "Save",
+    "saved": "Saved",
+    "remove": "Remove Post",
+    "removed": "Removed",
+    "viewPost": "View post",
+    "readMore": "Read more"
+  },
+  "feed": {
+    "title": "Discussion Forum",
+    "subtitle": "Ask questions, share knowledge, and learn together.",
+    "filterAll": "All Courses",
+    "empty": "No posts yet. Be the first to start a discussion!",
+    "loading": "Loading posts…"
+  },
+  "saved": {
+    "title": "Saved Posts",
+    "subtitle": "Posts you've bookmarked for later.",
+    "count": "{count, plural, =0 {Nothing saved yet} one {# post saved} other {# posts saved}}",
+    "empty": "You haven't saved any posts yet. Bookmark posts from the forum to find them here.",
+    "loading": "Loading saved posts…",
+    "backToForum": "Back to Forum"
+  },
+  "auth": {
+    "signInAs": "Sign in as",
+    "currentUser": "Signed in as {name}",
+    "role": {
+      "student": "Student",
+      "moderator": "Moderator"
+    }
+  },
+  "errors": {
+    "loadFailed": "Failed to load. Please try again.",
+    "saveFailed": "Could not save post. Please try again.",
+    "removeFailed": "Could not remove post. Please try again.",
+    "notFound": "Post not found.",
+    "retry": "Retry"
+  }
+}

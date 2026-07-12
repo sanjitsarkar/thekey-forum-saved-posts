@@ -1,0 +1,16 @@
+{
+  "name": "forum",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c cyan,magenta \"bun run --cwd apps/server dev\" \"bun run --cwd apps/web dev\"",
+    "build": "bun run --cwd apps/server build && bun run --cwd apps/web build",
+    "test": "bun run --cwd apps/server test",
+    "db:migrate": "bun run --cwd apps/server db:migrate",
+    "db:seed": "bun run --cwd apps/server db:seed",
+    "db:generate": "bun run --cwd apps/server db:generate"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

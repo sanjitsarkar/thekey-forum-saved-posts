@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "forum": "Foro",
+    "savedPosts": "Posts Guardados",
+    "allCourses": "Todos los Cursos"
+  },
+  "post": {
+    "by": "por",
+    "in": "en",
+    "saves": "{count, plural, =0 {Sin guardados} one {# guardado} other {# guardados}}",
+    "likes": "{count, plural, =0 {Sin likes} one {# like} other {# likes}}",
+    "save": "Guardar",
+    "saved": "Guardado",
+    "remove": "Eliminar Post",
+    "removed": "Eliminado",
+    "viewPost": "Ver post",
+    "readMore": "Leer más"
+  },
+  "feed": {
+    "title": "Foro de Discusión",
+    "subtitle": "Haz preguntas, comparte conocimiento y aprende juntos.",
+    "filterAll": "Todos los Cursos",
+    "empty": "¡Aún no hay posts! Sé el primero en iniciar una discusión.",
+    "loading": "Cargando posts…"
+  },
+  "saved": {
+    "title": "Posts Guardados",
+    "subtitle": "Posts que has marcado para leer después.",
+    "count": "{count, plural, =0 {Nada guardado aún} one {# post guardado} other {# posts guardados}}",
+    "empty": "No has guardado ningún post todavía. Guarda posts del foro para encontrarlos aquí.",
+    "loading": "Cargando posts guardados…",
+    "backToForum": "Volver al Foro"
+  },
+  "auth": {
+    "signInAs": "Iniciar sesión como",
+    "currentUser": "Conectado como {name}",
+    "role": {
+      "student": "Estudiante",
+      "moderator": "Moderador"
+    }
+  },
+  "errors": {
+    "loadFailed": "Error al cargar. Por favor, intenta de nuevo.",
+    "saveFailed": "No se pudo guardar el post. Intenta de nuevo.",
+    "removeFailed": "No se pudo eliminar el post. Intenta de nuevo.",
+    "notFound": "Post no encontrado.",
+    "retry": "Reintentar"
+  }
+}
