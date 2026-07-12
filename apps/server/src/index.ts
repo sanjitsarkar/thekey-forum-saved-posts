@@ -11,17 +11,13 @@ const app = new Elysia()
   .use(
     cors({
       origin: (origin) => {
-        // Allow local dev and any Vercel deployment of this project
-        const allowed = [
-          "http://localhost:3000",
-          "http://localhost:3001",
-          "https://forum-one-sage.vercel.app",
-        ];
         if (!origin) return true; // server-to-server
-        if (allowed.includes(origin)) return true;
-        // Allow any *.vercel.app preview URL for this project
-        if (origin.endsWith(".vercel.app")) return true;
-        return false;
+        const extra = (process.env["ALLOWED_ORIGINS"] ?? "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const defaults = ["http://localhost:3000", "http://localhost:3001"];
+        return [...defaults, ...extra].includes(origin);
       },
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       credentials: true,
