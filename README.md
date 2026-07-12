@@ -2,6 +2,15 @@
 
 A full-stack take-home slice for THEKEY: a discussion feed with an end-to-end bookmarks (Saved Posts) feature, course enrollment enforcement, optimistic UI, i18n, and a full test suite.
 
+## Live Deployment
+
+| | URL |
+|--|--|
+| Web App | https://forum-one-sage.vercel.app |
+| API | https://thekey-forum-api-production.up.railway.app |
+
+Health check: [`/health`](https://thekey-forum-api-production.up.railway.app/health)
+
 ## Stack
 
 | Layer | Technology |
