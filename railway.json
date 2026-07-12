@@ -3,10 +3,9 @@
   "deploy": {
     "startCommand": "bun run apps/server/src/db/migrate.ts && bun run apps/server/src/index.ts",
     "healthcheckPath": "/health",
-    "healthcheckTimeout": 30
+    "healthcheckTimeout": 60
   },
   "build": {
-    "builder": "DOCKERFILE",
-    "dockerfilePath": "apps/server/Dockerfile"
+    "builder": "NIXPACKS"
   }
 }
